@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const App = props => {
   const [state, setState] = useState(props);
   const { name, price } = state;
 
   const reset = () => setState(props);
+
+  useEffect(() => {
+    console.log(111)
+  })
+
+  useEffect(() => {
+    console.log(222)
+  }, [])
+
+  useEffect(() => {
+    console.log(333)
+  }, [name])
 
   return (
     <>
